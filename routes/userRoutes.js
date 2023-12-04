@@ -70,7 +70,7 @@ userRouter.get('/search', async (req, res) => {
     }
   });
 
-router.post('/book-slot/:userId', async (req, res) => {
+userRouter.post('/book-slot/:userId', async (req, res) => {
     const userId = req.params.userId;
     const { slot } = req.body;
 
@@ -90,7 +90,7 @@ router.post('/book-slot/:userId', async (req, res) => {
     }
 });
 
-router.get('/booked-slots/:userId', async (req, res) => {
+userRouter.get('/booked-slots/:userId', async (req, res) => {
     const userId = req.params.userId;
     try {
         const user = await UserModel.findById(userId);
